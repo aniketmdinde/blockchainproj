@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CertiChain | Certificate Verification</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">CertiChain</a>
+    <button id="connectWallet">Connect Wallet</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">BLOCKCHAIN-POWERED VERIFICATION</p>
+      <h1>Trust every credential.</h1>
+      <p>Verify certificates against an institution's on-chain records.</p>
+      <p id="walletStatus" class="muted">Wallet not connected</p>
+    </section>
+
+    <section class="panel">
+      <h2>Verify a certificate</h2>
+      <p class="muted">Enter the certificate ID and the original details.</p>
+
+      <form id="verifyForm">
+        <label for="verifyId">Certificate ID</label>
+        <input id="verifyId" required placeholder="e.g. TEC-2026-001" />
+
+        <label for="verifyStudent">Student name</label>
+        <input id="verifyStudent" required />
+
+        <label for="verifyCourse">Course / qualification</label>
+        <input id="verifyCourse" required />
+
+        <label for="verifyDate">Issue date</label>
+        <input id="verifyDate" type="date" required />
+
+        <button type="submit">Verify Certificate</button>
+      </form>
+
+      <div id="verifyResult" class="result hidden"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Institution portal</h2>
+      <p class="muted">Connect the institution's owner wallet to manage records.</p>
+
+      <form id="issueForm">
+        <label for="issueId">Certificate ID</label>
+        <input id="issueId" required placeholder="e.g. TEC-2026-001" />
+
+        <label for="issueStudent">Student name</label>
+        <input id="issueStudent" required />
+
+        <label for="issueCourse">Course / qualification</label>
+        <input id="issueCourse" required />
+
+        <label for="issueDate">Issue date</label>
+        <input id="issueDate" type="date" required />
+
+        <button type="submit">Issue Certificate</button>
+      </form>
+
+      <div id="issueResult" class="result hidden"></div>
+
+      <div class="revoke">
+        <h3>Revoke a certificate</h3>
+        <form id="revokeForm">
+          <label for="revokeId">Certificate ID</label>
+          <input id="revokeId" required />
+          <button type="submit" class="danger">Revoke Certificate</button>
+        </form>
+        <div id="revokeResult" class="result hidden"></div>
+      </div>
+    </section>
+
+    <footer>
+      CertiChain · Mini project · Local blockchain demo
+    </footer>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
